@@ -1,0 +1,54 @@
+@charset "UTF-8";
+main {
+  width: 500px; /* 개별속성값 */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* 공통 속성 */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url();
+}
+
+main h1 {
+  color: #f00;
+}
+
+main p {
+  color: #00f;
+}
+
+main p:hover {
+  color: #f00;
+}
+
+main .box {
+  background-color: #ff0;
+}
+
+main .box input:hover {
+  background-color: rgb(0, 255, 255);
+}
+
+main .box input[type=text] {
+  border: 1px solid rgb(255, 105, 180);
+}
+
+main .box span {
+  background-color: rgb(173, 216, 230);
+  color: rgb(0, 0, 139);
+}
+
+main .box span:nth-child(3) {
+  border: 2px dotted aquamarine;
+}
+
+main .box input + span {
+  background-color: #f00;
+}
+
+
+
+/*# sourceMappingURL=style1.css.map */
