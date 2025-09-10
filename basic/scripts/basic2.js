@@ -105,7 +105,7 @@ console.log(
 // 토 - 비
 // 일 - 흐림
 
-const yoil = ['월','화','수','목','금','토','일']
+/* const yoil = ['월','화','수','목','금','토','일']
 const weather = ['맑음', '비', '흐림']
 console.log (`${yoil[0]} - ${weather[0]}`)
 console.log (`${yoil[1]} - ${weather[1]}`)
@@ -114,8 +114,8 @@ console.log (`${yoil[3]} - ${weather[0]}`)
 console.log (`${yoil[4]} - ${weather[0]}`)
 console.log (`${yoil[5]} - ${weather[1]}`)
 console.log (`${yoil[6]} - ${weather[2]}`)
-
-const megabox=new Array (8) // 빈 좌석 8개
+ */
+/* const megabox=new Array (8) // 빈 좌석 8개
 megabox[0]="A1"
 megabox[1]="A2"
 megabox[2]=""
@@ -126,10 +126,10 @@ megabox[6]=""
 megabox[7]=""
 console.log(`현재 예매 좌석 : ${megabox[0]} ${megabox[1]}`)
 megabox[0]=""
-console.log(`현재 예매 좌석 :${megabox[0]} ${megabox[1]}`)
+console.log(`현재 예매 좌석 :${megabox[0]} ${megabox[1]}`) */
 
 // cgv 좌석 예매와 취소
-const cgv = [] // 빈 배열 준비
+/* const cgv = [] // 빈 배열 준비
 console.log(cgv.length)
 // 좌석 A1 선택
 cgv.push('A1')
@@ -145,21 +145,21 @@ console.log(cgv)
 cgv.push('A2','A3')
 console.log(cgv)
 
-console.log(cgv.length >= 8)
+console.log(cgv.length >= 8) */
 // 선택 좌석이 8개일때 좌석 추가 금지
 
-const price=11000
+/* const price=11000 */
 // 출력결과예시
 // 선택 좌석 수 : 00
 // 총 결제 금액 : 0000원
 
-const pr=(cgv.length*price).toLocaleString("ko-kr")
+/* const pr=(cgv.length*price).toLocaleString("ko-kr")
 console.log(`현재 예매 좌석 : ${cgv}`)
 console.log(`${cgv.length}개`)
-console.log(`${pr}원`)
+console.log(`${pr}원`) */
 
 // 1. 산술 연산자
-let num1 = 5;
+/* let num1 = 5;
 let num2 = 2;
 let result = num1 + num2
 console.log(result)
@@ -168,7 +168,7 @@ console.log(result)
 console.log(num1 * num2)
 console.log(num1 / num2)
 console.log(num1 % num2)
-console.log(num1 ** num2)
+console.log(num1 ** num2) */
 
 // 이항 연산자 활용 두 수를 사용자에게 입력받고 입력받은 값을 활용하여 더하기만 되는 계산기 만들기
 /* const firstNum = prompt('첫번째 수');
@@ -177,10 +177,10 @@ console.log(firstNum,lastNum);
 const numTotal = (firstNum + lastNum)
 console.log(numTotal); */
 // 일회성 출력으로 문제 해결 안됨.. 0> 원인은 프롬프트가 문자열로 바꾸기  0> numbver으로 감싸기
-
-console.log('----------------')
+/* 
+console.log('----------------') */
 //증감연산자
-let x = 5;
+/* let x = 5;
 let y = 0;
 console.log(x,y);// 5 0
 y = x ++;
@@ -190,34 +190,34 @@ console.log(x,y); //6,6
 x++;
 console.log(x,y);//7,6
 --y;
-console.log(x,y)//7, 5
+console.log(x,y)//7, 5 */
 
-let a = 10 
+/* let a = 10 
 let b = 20
 let c = 30
 let d = 40
-console.log(a,b,c,d)
+console.log(a,b,c,d) */
 //a=10, b=20, c=30, d=40
-a++
+/* a++
 b--
 c++
 d--
-console.log(a,b,c,d)
+console.log(a,b,c,d) */
 //a=11, b=19, c=31, d=39
-a = ++b
+/* a = ++b
 b = a++
-console.log(a,b,c,d)
+console.log(a,b,c,d) */
 //a=21, b=20, c=31, d=39
-c = a+b
+/* c = a+b
 d = ++c
-console.log(a,b,c,d)
+console.log(a,b,c,d) */
 //a=21, b=20, c=42, d=42
-a = ++c + 10
+/* a = ++c + 10
 b = --d + 1
-console.log(a,b,c,d)
+console.log(a,b,c,d) */
 //a=53, b=42 c=43, d=41
 
-let number = 10;
+/* let number = 10;
 number += 5;
 number -= 5;
 console.log(number); //10
@@ -227,3 +227,43 @@ number*=10
 console.log(number); //20
 number %=3
 console.log(number); //2
+ */
+
+// 함수
+// 1. 내장함수 
+// prompt ('함수는?')
+// alert ('함수는');
+// print ();
+// 2. 사용자정의함수
+// function 함수명(인자){반복구문}
+// Q1. html, css, js 반복출력
+/* 함수밖 (전역스코프) */
+let lang1 = ''
+let lang2 = ''
+let lang3 = ''
+function study_lang(){
+    lang1= 'html'
+    lang2= 'css'
+    lang3= 'javascript'
+    console.log(`배운 언어 : ${lang1+lang2+lang3}`);
+}
+study_lang();/* 함수호출상태 */
+/* 함수는 생성(대기)과 호출을 별개로 취급한다. */
+console.log(lang1,lang2,lang3);
+lang2+='3';
+console.log(lang2);
+
+console.log('지역변수와 전역변수')
+let xx = 1;
+let yy = 0;
+
+function func1() {
+    yy = 5;
+    console.log(xx+yy)
+}
+function func2() {
+    let zz = 10;
+    console.log(xx+yy+zz)
+}
+func1()
+func2()
