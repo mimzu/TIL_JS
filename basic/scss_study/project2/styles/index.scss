@@ -1,0 +1,36 @@
+@use './common.scss' as *;
+
+.slide_wrap {
+    .slide_container {
+        .slide {
+            height: 100%;
+            .title_contents {
+                h1 {}
+                p {}
+            }
+            .bnr_link {
+                a {}
+                .education_btn {}
+                .news_btn {}
+            }
+        }
+        .slide1 {
+            background-image:url(../image/home_chun_yellow_250813.png);
+            @include bg-cover;
+            background-size:800px auto;
+            background-position:120% center;
+        }
+        .slide_page_btn {
+            @include pst-ab; top:auto; bottom:50px;
+            .pagenation {
+                .current {}
+                .bar {}
+                .total {}
+            }
+            .btn_g {
+                #prev {}
+                #next {}
+            }
+        }
+    }
+}
