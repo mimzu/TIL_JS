@@ -1,0 +1,53 @@
+body {
+  background-color: #f9f9f9;
+}
+body main {
+  width: 420px;
+  height: 640px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main .top {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+body main .top .profile .photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 460px;
+  background-image: url(https://images.unsplash.com/photo-1476900543704-4312b78632f8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+body main .top .profile .container .menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main .top .profile .container .menu .left {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main .top .profile .container .menu .left a {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main .top .profile .container .menu .left a img {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
