@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다이어트 체중계</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/5a/a3/c6/5aa3c6c52ee63505fd711e0e3c3a0923.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/diet_scale.css">
+    <script src="./styles/diet_scale.js" defer></script>
 </head>
 <body>
-    <div id=wrap>
-        <h1>다이어트 체중계</h1>
-        <div class=""></div>
-    </div>
+	<header>
+		<button type=button name="bg_change" id="bg_change">배경화면 바꾸기</button>
+	</header>
+	<div id=wrap>
+		<h1>다이어트를 하겠다구리?</h1>
+		<p>내가 목표설정을 도와주겠다구리</p>
+		<div id="form">
+			<form action="#" method="get" id="diet_frm">
+				<div class="input">
+					<input type="text" name="user_height" id="user_height" placeholder="키를 입력하구리">
+					<input type="text" name="user_weight" id="user_weight" placeholder="몸무게를 입력해구리">
+				</div>
+				<button type="button" id="result_btn">너의 상태를 확인해구리</button> 
+			</form>
+		</div>
+	</div>
 </body>
 </html>

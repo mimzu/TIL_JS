@@ -1,0 +1,59 @@
+body {
+    background-image: url(https://i.pinimg.com/1200x/ca/98/a6/ca98a620052ac6bf813494f2d933e318.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header {text-align: right; padding:5px 30px;}
+header #bg_change {
+    background-color:#fffacd;
+    font-size:0.5rem;
+    padding:5px;
+    border-radius: 5px;
+    border:1px solid #556b2f;
+    color:#556b2f;
+}
+header #bg_change:hover {background-color:#556b2f; border:1px solid #fffacd; color:#fffacd;}
+#wrap {
+    display:flex;
+    flex-flow:column nowrap;
+    gap:15px;
+    width:max-content;
+    padding:20px 50px;
+    background-color:rgba(255, 250, 204, 0.9);
+    margin:0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+#wrap h1 {
+    color:#556b2f;
+    font-size:2rem;
+    font-weight: 700;
+}
+#wrap p {color:#556b2f}
+#wrap #form {}
+#wrap #form #diet_frm {
+
+}
+#wrap #form #diet_frm .input {
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+#wrap #form #diet_frm .input #user_height,
+#wrap #form #diet_frm .input #user_weight {
+    padding:3px 10px;
+    font-size:0.75rem;
+    border-radius: 5px;
+    border:1px solid #556b2f;
+}
+#wrap #form #diet_frm #result_btn {
+    background-color:#fffacd;
+    padding:5px 20px;
+    margin-top:10px;
+    border-radius: 7px;
+    color:#a2bb76;
+    font-size:0.85rem;
+    border:1px solid #a2bb76;
+}
