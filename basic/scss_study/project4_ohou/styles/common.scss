@@ -1,0 +1,39 @@
+//common.scss
+$font-size-xl:2rem;
+$font-sixe-l:1.375rem;
+$font-sixe-m:1rem;
+$font-sixe-s:0.875rem;
+$font-sixe-btn:1.063rem;
+$font-weight-bold:700;
+$color-point:#0aa5ff;
+$color-black:#000;
+$color-white:#fff;
+$color-gray-light-lv1:#828c94;
+$color-gray-light-lv2:#bdbdbd;
+$color-gray-light-lv3:#dadce0;
+$color-gray-dark:#292929;
+$color-gray-medium:#757575;
+@mixin content-w {max-width:1156px; min-width:320px; margin:0 auto;}
+@mixin flex-row {display:flex; flex-flow:row nowrap; justify-content: flex-start; align-items: center;}
+@mixin flex-col {display:flex; flex-flow:column nowrap;}
+@mixin grid-6-2 {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(6,1fr);
+}
+@mixin grid-2-2 {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(2,max-content);
+}
+@mixin icon24 {width:24px; height: 24px;}
+@mixin icon20 {width:20px; height: 20px;}
+@mixin icon16 {width: 16px; height: 16px;}
+@mixin cart_buy_btn {width:100%; padding:20px 0; border-radius: 5px; border:1px solid #0aa5ff;}
+@mixin after_before{content:''; display:block; position:absolute; left:0; top:0;}
+@mixin select_form{width:100%;
+    background-color:$color-white;
+    padding: 13px 17px;
+    border:1px solid $color-point;
+    border-radius:5px;
+    font-size:$font-sixe-s;}
