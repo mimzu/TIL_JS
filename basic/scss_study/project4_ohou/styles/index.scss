@@ -23,7 +23,7 @@ body{
                     }
                 }
             }
-            .container{@include grid-6-2;
+            .container{ display:flex; flex-flow:row nowrap;
                 .overview_img{ @include flex-row; gap:15px; align-items: flex-start;
                     .thumnail{
                         @include flex-col; gap:10px;
@@ -51,7 +51,7 @@ body{
                         }
                     }
                 }
-                .review{ @include flex-row; gap:8px; font-size:0.813rem;
+                .review{ @include flex-row; gap:8px; font-size:0.813rem; width: max-content;
                     .score{
                         .star{fill:$color-point;
                         width: 13px; height: 13px;}
@@ -66,13 +66,14 @@ body{
                     .price_info{ position:relative;
                         svg{fill:$color-gray-light-lv2; width: 15px;}
                         .info{display:none;
-                            background-color:$color-white;
+                            background-color:#f5f5f5;
                             border-radius: 5px;
                             position:absolute;
                             width:300px;
                             left:50%; top:50%;
-                            transform:translateX(-50%); padding:10px;
+                            transform:translateX(-50%); padding:15px;
                             font-size:$font-sixe-m;
+                            line-height: 120%;
                         }
                     }
                 }

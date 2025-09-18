@@ -39,9 +39,8 @@ body #wrap main .path a::after {
   font-size: 0.875rem;
 }
 body #wrap main .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  display: flex;
+  flex-flow: row nowrap;
 }
 body #wrap main .container .overview_img {
   display: flex;
@@ -118,6 +117,7 @@ body #wrap main .container .review {
   align-items: center;
   gap: 8px;
   font-size: 0.813rem;
+  width: max-content;
 }
 body #wrap main .container .review .score .star {
   fill: #0aa5ff;
@@ -143,15 +143,16 @@ body #wrap main .price_wrap .sale_original_price .price_info svg {
 }
 body #wrap main .price_wrap .sale_original_price .price_info .info {
   display: none;
-  background-color: #fff;
+  background-color: #f5f5f5;
   border-radius: 5px;
   position: absolute;
   width: 300px;
   left: 50%;
   top: 50%;
   transform: translateX(-50%);
-  padding: 10px;
+  padding: 15px;
   font-size: 1rem;
+  line-height: 120%;
 }
 body #wrap main .price_wrap .total_price {
   margin-top: 25px;
