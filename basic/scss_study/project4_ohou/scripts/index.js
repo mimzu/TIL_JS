@@ -170,6 +170,9 @@ selectSize.addEventListener('change', ()=>{
 // 1. JS에서 HTML 함수로 생성 createElement ()
 const sizeOpt1 = document.createElement('option')
 const sizeOpt2 = document.createElement('option')
+const orderPrice = document.querySelector('.num_price .price')
+const orderPriceEm = document.querySelector('.order_price em')
+
 console.log(sizeOpt1, sizeOpt2)
 // 2. 위에서 생성한 함수에 DB 데이터 대입 innerHTML, textContent
 sizeOpt1.textContent = `${productOptDB[0].size[0]}(${productOptDB[0].price.toLocaleString('ko-kr')}원)`
@@ -191,7 +194,21 @@ selectColor.addEventListener('change',()=>{
                 console.log(orderList.children[0].children[0])
                 console.log(orderList.children[0].children[1])
                 // 선택옵션 (color) 출력하기
-                orderList.children[0].children[0] = colorSelet.option['selectedIndex'].text
+                let orderColor = selectColor.options[selectColor.selectedIndex].text;
+                let orderColorReplace = orderColor.replace(/\(.*\)/,"")
+                //정규 표현식 시작과 끝 표시 /검사내용/
+                //괄호 찾기 \찾는문자 \(.*\)
+                //모든 내용 .*
+                orderList.children[0].children[0].textContent = orderColorReplace
+                // 선택옵션 (size) 출력하기
+                let orderSize = selectSize.options[selectSize.selectedIndex].text;
+                let orderSizeReplace = orderSize.replace(/\(.*\)/,"")
+                orderList.children[0].children[1].textContent = orderSizeReplace;
+                //주문금액 숫자 변경
+                console.log(orderPrice)
+                orderPrice.textContent = `${(productOptDB[0].price).toLocaleString('ko-kr')}원`
+                let orderPriceReplace = orderPrice.textContent.replace(/원/,"")
+                orderPriceEm.textContent = orderPriceReplace
             } else {
                 orderList.style.display = 'none'
             }
@@ -199,4 +216,20 @@ selectColor.addEventListener('change',()=>{
     }else { //사용자가 선택한 opt이 0일때
         selectSize.disabled = true; //비활성화\
     }
+})
+
+// 8. 주문목록 'X' 클릭 주문목록 삭제, 주문금액 초기화
+const closeBtn = document.querySelector('.close')
+console.log(closeBtn)
+/* closeBtn.addEventListener('click',()=>{
+    orderList.style.display = 'none'
+    selectSize.selectedIndex =0
+    selectColor.selectedIndex =0
+    orderPriceEm.textContent=0
+}) */
+closeBtn.addEventListener('click',function(){
+    this.parentNode.style.display = 'none';
+    orderPriceEm.textContent = 0;
+    selectColor.selectedIndex = selectColor.options[0];
+    selectSize.selectedIndex = selectSize.options[0];
 })

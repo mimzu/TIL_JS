@@ -72,3 +72,4 @@
 * `change` : select 태그 변경시 인식하는 이벤트 종류
 * `selectedIndex` : select 의 선택 option index 확인 속성
 * `options[index]` : select의 특정 option 확인 시 속성
+* 객체.속성 , 객체.optiongs[], 객체.selectedIndex
