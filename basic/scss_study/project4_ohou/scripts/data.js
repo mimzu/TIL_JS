@@ -12,5 +12,5 @@ const productOptDB = [{
     color: ['화이트','모카','크림'],
     size: ['200','300','400'],
     price:[18500,9900],
-    stock:100;
+    stock:100,
 }]
