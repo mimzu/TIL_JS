@@ -1,0 +1,112 @@
+@use './common.scss' as *;
+
+body {
+    header {
+        .top_bar_banner { background-color: $color-black;
+            height: 40px;
+            img {width: 100%; height: 100%}
+        }
+        .header_menu { background-color:lightcyan;
+            @include flex-row; justify-content: space-between;
+            margin:0 100px; height: 90px;
+            h1 {   
+                img{width: 157px;}}
+            .header_menu_list {
+                @include flex-row; gap:60px;
+                li { line-height: 90px; a{ height: 100%; font-size:$font-size-lastbtn; font-weight: $weight-medium;}}
+            }
+            .header_icons {
+                @include flex-row; gap:20px;
+                li { 
+                    button {svg{fill:$color-black;}}
+                    a {svg{fill:$color-black;}}
+                }
+            }
+        }
+    }
+    #wrap { @include w1400; margin-top:40px; @include flex-col; gap:20px; overflow: hidden; background-color:bisque; 
+        .nav { @include flex-row; gap:8px;
+            li { font-size:$font-size-s;
+                a {@include flex-row; gap:3px img{}}
+            } /* ">" ============================================================================after로 어디에 어떻게 넣지???????????????????????????????????????? */
+        }
+        .main_contents { @include flex-row; justify-content: center; gap:80px;
+            .left_contents { @include flex-row; gap:20px; justify-content: center;
+                .left_preview { height: 678px;
+                    li {.arrow {img{}}} /* 개별 선택자 top_arrow, bottom_arrow */  /* ================아래 화살표 위치 설정 어떻게? */
+                    .smallphoto_list { 
+                        @include flex-col; gap:6px;
+                        .preview {
+                        width: 84px; height: 84px; overflow:hidden; /* =-===========================사진 가운데로 오게 어케하지???????? */
+                        img{width: 100%; size:cover;}
+                        }
+                    } /* 개별 선택자 small1~10 */
+                }
+            }
+            .big_view { width: 508px; height: 678px;
+                @include flex-row; overflow: hidden;
+                .photo { background-color:antiquewhite;/* 개별 선택자 big1~10 */
+                    img {width: 508px;}
+                }
+            }
+        }
+        .right_contents { background-color:azure; width: 100%;
+            @include flex-col; gap:30px;
+            .product_info { 
+                h2 {font-size:$font-size-xxl; font-weight: $weight-semibold; float:left; width: 100%;}
+                a {img{ width: 24px; height: 24px; width: 100%;}} /* ========================================================================================svg============================= */
+                p {margin-top:20px; font-size:$font-size-m;}
+            }
+            .price_info {
+                width: 100%;
+                p { font-size:$font-size-l;
+                    em {font-size:$font-size-s; color:$color-gray3; }
+                    strong {color:$color-point;font-weight: $weight-semibold;}
+                    img {} /* ========================================================================================svg============================= */
+                }
+                p:nth-child(2) {margin-top:5px; font-size:$font-size-xl; font-weight: $weight-semibold;}
+                .hidden_price_info {display:none;}
+            }
+            .info_card { @include flex-row; gap:14px;
+                .card { /* 개별 선택자 card1~4 */
+                    @include cardbox; 
+                    @include flex-row; gap:6px; align-items: center; 
+                    dt {
+                        font-size:$font-size-carddt;
+                        width: 60px;
+                        img {}}
+                    dd {font-size:$font-size-s; width:100%;}
+                }
+                .card1 {} /* ========================================================================== 얘 혼자 디자인 다름!!!!!!!!!!!!! */
+            }
+            .shippay_info {width: 100%;
+                padding: 30px 0; 
+                border-top: 1px solid $color-gray2-line;
+                border-bottom: 1px solid $color-gray2-line;
+                dt {}
+                dd {}
+            }
+            .order_box { 
+                .order_product_name {}
+                .order_num_view {
+                    #minus_btn {}
+                    #order_num {} /* input */
+                    #plus_num {}
+                }
+                .order_price {}
+            }
+            .order_result {
+                p { span{}}
+            }
+            .right_btm_btn {
+                #like_btn {}
+                .last_btn {} /* 공통 */
+                .last_btn_cart {} /* 개별 */
+                .last_btn_buy {} /* 개별 */
+            }
+            .sub_detail {
+                p {}
+            }
+        }
+    }
+}

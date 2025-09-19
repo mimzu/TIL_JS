@@ -1,0 +1,51 @@
+//common.scss
+$font-size-xxl : 1.875rem; //30
+$font-size-xl : 1.5rem; //24
+$font-size-l : 1.25rem; //20
+$font-size-lastbtn : 1.125rem; //18
+$font-size-m : 1rem; //16
+$font-size-s : 0.875rem; //14
+$font-size-carddt : 0.813rem; //13
+$font-size-xxs : 0.75rem; //12
+
+$weight-medium : 500;
+$weight-semibold : 600;
+
+
+$color-test: aqua;
+
+$color-black : #000;
+$color-black2 : #111;
+$color-black3 : #333;
+$color-black4-sub : #767676;
+$color-white : #fff;
+$color-gray1-boxbg : #f6f6f6;
+$color-gray2-line : #E5E5E5;
+$color-gray3 : #999;
+$color-gray4 : #666;
+$color-point : #FF4519;
+
+@mixin flex-row {
+    display:flex; flex-flow : row nowrap; 
+    justify-content: flex-start; align-items: center;
+}
+@mixin flex-col {
+    display:flex; flex-flow: column nowrap;
+    justify-content: flex-start; align-items: flex-start ;
+}
+@mixin w1400 {
+    margin: 0 auto;
+    width: 1400px;
+    display:flex; flex-flow: row nowrap;
+    justify-content: space-between; align-items: flex-start;
+}
+@mixin icon14 {width: 14px; height: 14px;}
+@mixin icon18 {width: 18px; height: 18px;}
+@mixin icon24 {width: 24px; height: 24px;}
+@mixin cardbox {
+    width: 448px; height: 96px;
+    border-radius: 10px;
+    background-color:$color-gray1-boxbg;
+    padding: 20px 30px;
+    /* flex? float? dt를 왼쪽에 dd를 오른쪽에 어떻게 배치할지 고민 필요 */
+}

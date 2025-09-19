@@ -1,0 +1,231 @@
+@charset "UTF-8";
+body header .top_bar_banner {
+  background-color: #000;
+  height: 40px;
+}
+body header .top_bar_banner img {
+  width: 100%;
+  height: 100%;
+}
+body header .header_menu {
+  background-color: lightcyan;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 100px;
+  height: 90px;
+}
+body header .header_menu h1 img {
+  width: 157px;
+}
+body header .header_menu .header_menu_list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+}
+body header .header_menu .header_menu_list li {
+  line-height: 90px;
+}
+body header .header_menu .header_menu_list li a {
+  height: 100%;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+body header .header_menu .header_icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+body header .header_menu .header_icons li button svg {
+  fill: #000;
+}
+body header .header_menu .header_icons li a svg {
+  fill: #000;
+}
+body #wrap {
+  margin: 0 auto;
+  width: 1400px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: hidden;
+  background-color: bisque;
+}
+body #wrap .nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+body #wrap .nav li {
+  font-size: 0.875rem;
+}
+body #wrap .nav li a {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px img;
+}
+body #wrap .nav {
+  /* ">" ============================================================================after로 어디에 어떻게 넣지???????????????????????????????????????? */
+}
+body #wrap .main_contents {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+body #wrap .main_contents .left_contents {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+body #wrap .main_contents .left_contents .left_preview {
+  height: 678px;
+}
+body #wrap .main_contents .left_contents .left_preview { /* 개별 선택자 top_arrow, bottom_arrow */ /* ================아래 화살표 위치 설정 어떻게? */
+}
+body #wrap .main_contents .left_contents .left_preview .smallphoto_list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+}
+body #wrap .main_contents .left_contents .left_preview .smallphoto_list .preview {
+  width: 84px;
+  height: 84px;
+  overflow: hidden; /* =-===========================사진 가운데로 오게 어케하지???????? */
+}
+body #wrap .main_contents .left_contents .left_preview .smallphoto_list .preview img {
+  width: 100%;
+  size: cover;
+}
+body #wrap .main_contents .left_contents .left_preview {
+  /* 개별 선택자 small1~10 */
+}
+body #wrap .main_contents .big_view {
+  width: 508px;
+  height: 678px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+body #wrap .main_contents .big_view .photo {
+  background-color: antiquewhite; /* 개별 선택자 big1~10 */
+}
+body #wrap .main_contents .big_view .photo img {
+  width: 508px;
+}
+body #wrap .right_contents {
+  background-color: azure;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+body #wrap .right_contents .product_info h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  float: left;
+  width: 100%;
+}
+body #wrap .right_contents .product_info a img {
+  width: 24px;
+  height: 24px;
+  width: 100%;
+}
+body #wrap .right_contents .product_info { /* ========================================================================================svg============================= */ }
+body #wrap .right_contents .product_info p {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+body #wrap .right_contents .price_info {
+  width: 100%;
+}
+body #wrap .right_contents .price_info p {
+  font-size: 1.25rem;
+}
+body #wrap .right_contents .price_info p em {
+  font-size: 0.875rem;
+  color: #999;
+}
+body #wrap .right_contents .price_info p strong {
+  color: #FF4519;
+  font-weight: 600;
+}
+body #wrap .right_contents .price_info p { /* ========================================================================================svg============================= */ }
+body #wrap .right_contents .price_info p:nth-child(2) {
+  margin-top: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+body #wrap .right_contents .price_info .hidden_price_info {
+  display: none;
+}
+body #wrap .right_contents .info_card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+}
+body #wrap .right_contents .info_card .card { /* 개별 선택자 card1~4 */
+  width: 448px;
+  height: 96px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  padding: 20px 30px;
+  /* flex? float? dt를 왼쪽에 dd를 오른쪽에 어떻게 배치할지 고민 필요 */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  align-items: center;
+}
+body #wrap .right_contents .info_card .card dt {
+  font-size: 0.813rem;
+  width: 60px;
+}
+body #wrap .right_contents .info_card .card dd {
+  font-size: 0.875rem;
+  width: 100%;
+}
+body #wrap .right_contents .info_card { /* ========================================================================== 얘 혼자 디자인 다름!!!!!!!!!!!!! */ }
+body #wrap .right_contents .shippay_info {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+}
+body #wrap .right_contents .order_box .order_num_view { /* input */ }
+body #wrap .right_contents .right_btm_btn { /* 공통 */ }
+body #wrap .right_contents .right_btm_btn { /* 개별 */ }
+body #wrap .right_contents .right_btm_btn { /* 개별 */ }
+
+/*# sourceMappingURL=main.css.map */
