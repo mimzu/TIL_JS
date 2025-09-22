@@ -50,7 +50,7 @@ body {
                 }
             }
         }
-        .right_contents { background-color:azure; width: 100%;
+        .right_contents { background-color:azure;
             @include flex-col; gap:30px;
             .product_info { 
                 h2 {font-size:$font-size-xxl; font-weight: $weight-semibold; float:left; width: 100%;}

@@ -141,7 +141,6 @@ body #wrap .main_contents .big_view .photo img {
 }
 body #wrap .right_contents {
   background-color: azure;
-  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
