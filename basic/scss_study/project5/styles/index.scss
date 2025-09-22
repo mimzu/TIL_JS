@@ -6,7 +6,7 @@ body {
             height: 40px;
             img {width: 100%; height: 100%}
         }
-        .header_menu { background-color:lightcyan;
+        .header_menu { 
             @include flex-row; justify-content: space-between;
             margin:0 100px; height: 90px;
             h1 {   
@@ -18,22 +18,23 @@ body {
             .header_icons {
                 @include flex-row; gap:20px;
                 li { 
-                    button {svg{fill:$color-black;}}
-                    a {svg{fill:$color-black;}}
+                    button {svg{}}
+                    a {svg{}}
                 }
             }
         }
     }
-    #wrap { @include w1400; margin-top:40px; @include flex-col; gap:20px; overflow: hidden; background-color:bisque; 
+    #wrap { @include w1400; margin-top:40px; @include flex-col; gap:20px; 
         .nav { @include flex-row; gap:8px;
             li { font-size:$font-size-s;
-                a {@include flex-row; gap:3px img{}}
+                a {@include flex-row; gap:3px }
             } /* ">" ============================================================================after로 어디에 어떻게 넣지???????????????????????????????????????? */
         }
         .main_contents { @include flex-row; justify-content: center; gap:80px;
             .left_contents { @include flex-row; gap:20px; justify-content: center;
                 .left_preview { height: 678px;
-                    li {.arrow {img{}}} /* 개별 선택자 top_arrow, bottom_arrow */  /* ================아래 화살표 위치 설정 어떻게? */
+                    li {
+                        .arrow {}} /* 개별 선택자 top_arrow, bottom_arrow */  /* ================아래 화살표 위치 설정 어떻게? */
                     .smallphoto_list { 
                         @include flex-col; gap:6px;
                         .preview {
@@ -45,67 +46,119 @@ body {
             }
             .big_view { width: 508px; height: 678px;
                 @include flex-row; overflow: hidden;
-                .photo { background-color:antiquewhite;/* 개별 선택자 big1~10 */
+                .photo {/* 개별 선택자 big1~10 */
                     img {width: 508px;}
                 }
             }
         }
-        .right_contents { background-color:azure;
+        .right_contents { width: 706px; 
             @include flex-col; gap:30px;
             .product_info { 
-                h2 {font-size:$font-size-xxl; font-weight: $weight-semibold; float:left; width: 100%;}
-                a {img{ width: 24px; height: 24px; width: 100%;}} /* ========================================================================================svg============================= */
+                .line1 {@include flex-row; gap:50px;
+                    h2 {line-height: 120%; font-size:$font-size-xxl; font-weight: $weight-semibold; }
+                    a { width: 24px; height: 24px; img{width: 100%;}}
+                } /* ========================================================================================svg============================= */
                 p {margin-top:20px; font-size:$font-size-m;}
             }
-            .price_info {
+            .price_info {position:relative;
                 width: 100%;
                 p { font-size:$font-size-l;
                     em {font-size:$font-size-s; color:$color-gray3; }
                     strong {color:$color-point;font-weight: $weight-semibold;}
-                    img {} /* ========================================================================================svg============================= */
                 }
                 p:nth-child(2) {margin-top:5px; font-size:$font-size-xl; font-weight: $weight-semibold;}
-                .hidden_price_info {display:none;}
-            }
-            .info_card { @include flex-row; gap:14px;
-                .card { /* 개별 선택자 card1~4 */
-                    @include cardbox; 
-                    @include flex-row; gap:6px; align-items: center; 
-                    dt {
-                        font-size:$font-size-carddt;
-                        width: 60px;
-                        img {}}
-                    dd {font-size:$font-size-s; width:100%;}
+                .hidden_price_info {
+                    display:none; 
+                    font-size:$font-size-s;
+                    padding:10px; border-radius: 10px; 
+                    background-color:$color-gray3;
+                    position:absolute; left:250px;
+                    color:$color-white
                 }
-                .card1 {} /* ========================================================================== 얘 혼자 디자인 다름!!!!!!!!!!!!! */
+            }
+            #all { width: 706px;  overflow: hidden;
+                background-color:aqua; padding:5px;
+                .info_card { 
+                    display:flex; flex-flow:row nowrap;
+                    gap:14px; width: clac(448px*2); transition: transform 0.3s ease-out;
+                    .card { /* 개별 선택자 card1~4 */
+                        flex-shrink: 0; min-width: 280px;  
+                        @include cardbox; 
+                        @include flex-row; gap:6px; align-items: center; 
+                        dt {font-size:$font-size-s; 
+                            width: 60px;
+                            img {}}
+                        dd {font-size:$font-size-carddd; width:100%;}
+                    }
+                    .card1 {@include flex-row; gap:15px;
+                        dt {
+                            width:35px; height: 35px; 
+                            img {width: 100%;}
+                        }
+                        dd {
+                            .card1dt {font-size:$font-size-xxs;}
+                            font-size:$font-size-carddd;
+                        }
+                    } /* ========================================================================== 얘 혼자 디자인 다름!!!!!!!!!!!!! */
+                }
             }
             .shippay_info {width: 100%;
                 padding: 30px 0; 
                 border-top: 1px solid $color-gray2-line;
                 border-bottom: 1px solid $color-gray2-line;
-                dt {}
-                dd {}
+                dt {font-size: $font-size-xxs;}
+                dd {font-size: $font-size-xxs;}
             }
-            .order_box { 
-                .order_product_name {}
-                .order_num_view {
-                    #minus_btn {}
-                    #order_num {} /* input */
-                    #plus_num {}
+            .order_box { width: 100%;
+                border-radius: 10px;
+                border:1px solid $color-gray2-line;
+                padding: 24px; 
+                .order_product_name {margin-bottom:30px;font-weight: $weight-semibold;}
+                .order_num_view {float:left; 
+                    border:1px solid $color-gray2-line; width: max-content;
+                    #minus_btn {
+                        width: 30px; height: 30px;
+                    }
+                    #order_num {text-align:center; width: 45px; height: 30px;} /* input */
+                    #plus_btn {
+                        width: 30px; height: 30px;
+                    }
                 }
-                .order_price {}
+                .order_price {float: right; font-weight: $weight-semibold;
+                font-size:$font-size-l}
             }
             .order_result {
-                p { span{}}
+                @include flex-row; justify-content: space-between; width: 100%;;
+                p {font-size:$font-size-m; font-weight:$weight-semibold;
+                    em {font-size:$font-size-xxl;font-weight:$weight-semibold;}
+                    span{font-size:$font-size-s ;}}
             }
-            .right_btm_btn {
-                #like_btn {}
-                .last_btn {} /* 공통 */
-                .last_btn_cart {} /* 개별 */
-                .last_btn_buy {} /* 개별 */
+            .right_btm_btn { width: 100%; @include flex-row; 
+                #like_btn {
+                    height: 60px;background-color:$color-gray3; 
+                    width: 58px; margin-right:5px;border-radius: 10px; 
+                    border:1px solid $color-black;
+                }
+                .last_btn {/* 공통 */
+                    height: 60px; border:1px solid $color-black; border-radius: 10px;
+                    width: 100%; @include flex-row; overflow: hidden;
+                    .last_btn_cart {
+                        line-height:60px; width: 100%; 
+                        text-align: center;
+                    } /* 개별 */
+                    .last_btn_buy {
+                        line-height:60px; width: 100%; 
+                        background-color:$color-black; text-align: center;
+                        color:$color-white
+                    } /* 개별 */
+                }
             }
             .sub_detail {
-                p {}
+                p {font-size:$font-size-s;
+                    em{
+                        font-weight: $weight-semibold;
+                    }
+                }
             }
         }
     }

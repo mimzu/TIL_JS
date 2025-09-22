@@ -8,6 +8,7 @@ body header .top_bar_banner img {
   height: 100%;
 }
 body header .header_menu {
+  background-color: lightcyan;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -41,6 +42,12 @@ body header .header_menu .header_icons {
   align-items: center;
   gap: 20px;
 }
+body header .header_menu .header_icons li button svg {
+  fill: #000;
+}
+body header .header_menu .header_icons li a svg {
+  fill: #000;
+}
 body #wrap {
   margin: 0 auto;
   width: 1400px;
@@ -54,6 +61,8 @@ body #wrap {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
+  overflow: hidden;
+  background-color: bisque;
 }
 body #wrap .nav {
   display: flex;
@@ -70,7 +79,7 @@ body #wrap .nav li a {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 3px;
+  gap: 3px img;
 }
 body #wrap .nav {
   /* ">" ============================================================================after로 어디에 어떻게 넣지???????????????????????????????????????? */
@@ -124,46 +133,37 @@ body #wrap .main_contents .big_view {
   align-items: center;
   overflow: hidden;
 }
-body #wrap .main_contents .big_view .photo { /* 개별 선택자 big1~10 */ }
+body #wrap .main_contents .big_view .photo {
+  background-color: antiquewhite; /* 개별 선택자 big1~10 */
+}
 body #wrap .main_contents .big_view .photo img {
   width: 508px;
 }
 body #wrap .right_contents {
-  width: 706px;
+  background-color: azure;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 30px;
 }
-body #wrap .right_contents .product_info .line1 {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 50px;
-}
-body #wrap .right_contents .product_info .line1 h2 {
-  line-height: 120%;
+body #wrap .right_contents .product_info h2 {
   font-size: 1.875rem;
   font-weight: 600;
-}
-body #wrap .right_contents .product_info .line1 a {
-  width: 24px;
-  height: 24px;
-}
-body #wrap .right_contents .product_info .line1 a img {
+  float: left;
   width: 100%;
 }
-body #wrap .right_contents .product_info {
-  /* ========================================================================================svg============================= */
+body #wrap .right_contents .product_info a img {
+  width: 24px;
+  height: 24px;
+  width: 100%;
 }
+body #wrap .right_contents .product_info { /* ========================================================================================svg============================= */ }
 body #wrap .right_contents .product_info p {
   margin-top: 20px;
   font-size: 1rem;
 }
 body #wrap .right_contents .price_info {
-  position: relative;
   width: 100%;
 }
 body #wrap .right_contents .price_info p {
@@ -177,6 +177,7 @@ body #wrap .right_contents .price_info p strong {
   color: #FF4519;
   font-weight: 600;
 }
+body #wrap .right_contents .price_info p { /* ========================================================================================svg============================= */ }
 body #wrap .right_contents .price_info p:nth-child(2) {
   margin-top: 5px;
   font-size: 1.5rem;
@@ -184,30 +185,15 @@ body #wrap .right_contents .price_info p:nth-child(2) {
 }
 body #wrap .right_contents .price_info .hidden_price_info {
   display: none;
-  font-size: 0.875rem;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #999;
-  position: absolute;
-  left: 250px;
-  color: #fff;
 }
-body #wrap .right_contents #all {
-  width: 706px;
-  overflow: hidden;
-  background-color: aqua;
-  padding: 5px;
-}
-body #wrap .right_contents #all .info_card {
+body #wrap .right_contents .info_card {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
   gap: 14px;
-  width: clac(896px);
-  transition: transform 0.3s ease-out;
 }
-body #wrap .right_contents #all .info_card .card { /* 개별 선택자 card1~4 */
-  flex-shrink: 0;
-  min-width: 280px;
+body #wrap .right_contents .info_card .card { /* 개별 선택자 card1~4 */
   width: 448px;
   height: 96px;
   border-radius: 10px;
@@ -221,35 +207,15 @@ body #wrap .right_contents #all .info_card .card { /* 개별 선택자 card1~4 *
   gap: 6px;
   align-items: center;
 }
-body #wrap .right_contents #all .info_card .card dt {
-  font-size: 0.875rem;
+body #wrap .right_contents .info_card .card dt {
+  font-size: 0.813rem;
   width: 60px;
 }
-body #wrap .right_contents #all .info_card .card dd {
-  font-size: 0.813rem;
+body #wrap .right_contents .info_card .card dd {
+  font-size: 0.875rem;
   width: 100%;
 }
-body #wrap .right_contents #all .info_card .card1 {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 15px;
-}
-body #wrap .right_contents #all .info_card .card1 dt {
-  width: 35px;
-  height: 35px;
-}
-body #wrap .right_contents #all .info_card .card1 dt img {
-  width: 100%;
-}
-body #wrap .right_contents #all .info_card .card1 dd .card1dt {
-  font-size: 0.75rem;
-}
-body #wrap .right_contents #all .info_card .card1 dd {
-  font-size: 0.813rem;
-}
-body #wrap .right_contents #all .info_card {
+body #wrap .right_contents .info_card {
   /* ========================================================================== 얘 혼자 디자인 다름!!!!!!!!!!!!! */
 }
 body #wrap .right_contents .shippay_info {
@@ -257,6 +223,7 @@ body #wrap .right_contents .shippay_info {
   padding: 30px 0;
   border-top: 1px solid #E5E5E5;
   border-bottom: 1px solid #E5E5E5;
+  background-color: aqua;
 }
 body #wrap .right_contents .shippay_info dt {
   font-size: 0.75rem;
@@ -264,108 +231,9 @@ body #wrap .right_contents .shippay_info dt {
 body #wrap .right_contents .shippay_info dd {
   font-size: 0.75rem;
 }
-body #wrap .right_contents .order_box {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #E5E5E5;
-  padding: 24px;
-}
-body #wrap .right_contents .order_box .order_product_name {
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-body #wrap .right_contents .order_box .order_num_view {
-  float: left;
-  border: 1px solid #E5E5E5;
-  width: max-content;
-}
-body #wrap .right_contents .order_box .order_num_view #minus_btn {
-  width: 30px;
-  height: 30px;
-}
-body #wrap .right_contents .order_box .order_num_view #order_num {
-  text-align: center;
-  width: 45px;
-  height: 30px;
-}
 body #wrap .right_contents .order_box .order_num_view { /* input */ }
-body #wrap .right_contents .order_box .order_num_view #plus_btn {
-  width: 30px;
-  height: 30px;
-}
-body #wrap .right_contents .order_box .order_price {
-  float: right;
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-body #wrap .right_contents .order_result {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-body #wrap .right_contents .order_result p {
-  font-size: 1rem;
-  font-weight: 600;
-}
-body #wrap .right_contents .order_result p em {
-  font-size: 1.875rem;
-  font-weight: 600;
-}
-body #wrap .right_contents .order_result p span {
-  font-size: 0.875rem;
-}
-body #wrap .right_contents .right_btm_btn {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-body #wrap .right_contents .right_btm_btn #like_btn {
-  height: 60px;
-  background-color: #999;
-  width: 58px;
-  margin-right: 5px;
-  border-radius: 10px;
-  border: 1px solid #000;
-}
-body #wrap .right_contents .right_btm_btn .last_btn { /* 공통 */
-  height: 60px;
-  border: 1px solid #000;
-  border-radius: 10px;
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-}
-body #wrap .right_contents .right_btm_btn .last_btn .last_btn_cart {
-  line-height: 60px;
-  width: 100%;
-  text-align: center;
-}
-body #wrap .right_contents .right_btm_btn .last_btn {
-  /* 개별 */
-}
-body #wrap .right_contents .right_btm_btn .last_btn .last_btn_buy {
-  line-height: 60px;
-  width: 100%;
-  background-color: #000;
-  text-align: center;
-  color: #fff;
-}
-body #wrap .right_contents .right_btm_btn .last_btn {
-  /* 개별 */
-}
-body #wrap .right_contents .sub_detail p {
-  font-size: 0.875rem;
-}
-body #wrap .right_contents .sub_detail p em {
-  font-weight: 600;
-}
+body #wrap .right_contents .right_btm_btn { /* 공통 */ }
+body #wrap .right_contents .right_btm_btn { /* 개별 */ }
+body #wrap .right_contents .right_btm_btn { /* 개별 */ }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.in.css.map */

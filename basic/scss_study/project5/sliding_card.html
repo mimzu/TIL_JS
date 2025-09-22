@@ -30,7 +30,6 @@
     </div>
 
     <script>
-
         const allContainer = document.querySelector('.all')
         const bnrContainer = allContainer.querySelector('.bnr')
         const card = bnrContainer.querySelectorAll('.card')
@@ -41,7 +40,6 @@
         console.log(allContainer,bnrContainer,card,cardW)
 
         allContainer.addEventListener('mousedown',(e)=>{
-
             isDrag = true; //드래그 시작(마우스 누를 때) 상태 변경
             startX = e.pageX - allContainer.offsetLeft; //부모에서 마우스의 상대적인 좌표 저장
             startScrollLeft = allContainer.scrollLeft; //수평 스크롤 위치 저장
