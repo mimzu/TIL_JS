@@ -1,4 +1,23 @@
 @charset "UTF-8";
+/* 
+고칠 점 ... 
+1. 전체적으로 svg 아이콘 크기 조정 -> 오른쪽 상단 검색 아이콘 색도 바꿔야됨
+2. 로고 png로 바꾸던가해서 배경 검정 없애기
+3. 상단 광고 배너 어케 좀 하기
+4. responsive.scss로 줄이면 flex-flow:column nowrap되도록 만들기
+5. 제일 왼쪽 작은 사진 thumnail들 높이 조정
+6. 작은 사진 화살표... background 조정 + border-radius 조정해서 원 만들기
+7. 작은 사진 아래는 gradient 줘서 좀 가려져야됨 // 게다가 이거 눌러서 이동 가능하게 만들
+8. 7(위) 자바스크립트랑 같은 맥락으로 카드부분도 눌러서 이동 가능하도록 만들어야 함
+9. 수량 변경 시 가격 이상하게 나오는거 고치기!!! 그리고 옆에 (1개) 이것도 바뀌도록 html에서 em이라던가 뭐든 태그 추가해서 js 삽입
+10. 좋아요 버튼 바꾸기. 하트 빈걸로 .. 그리고 누르면 채워진걸로 나오도록 -> 반복 가능하게
+11. 장바구니 버튼이랑 바로구매 버튼 // 로그인 시 누르면 각 페이지로 이동 // 로그아웃 시 누르면 로그인 페이지로 이동하도록 js 추가
+12. 큰 사진도 붙잡고 좌우로 움직일 수 있도록 -> 왼쪽 썸네일 애니메이션도 함께 움직여야됨. 
+13. responsive 할거면 메뉴도 없애고 머 등등 해보자잇
+14. 작은 이미지에 hover 추가. 약간 흐려지게 만듦, 클릭하면 border 생김 
+    움직임은 자연스럽 ... 그리고 transition있는 것 가틈
+    밑에 원도 있음 원이 선택된 건 큰 원 검정색이 되고 비활성화는 회색 작아짐 근데 눌리진 않음
+*/
 body header .top_bar_banner {
   background-color: #000;
   height: 40px;
@@ -226,6 +245,7 @@ body #wrap .right_contents #all .info_card .card dt {
   width: 60px;
 }
 body #wrap .right_contents #all .info_card .card dd {
+  line-height: 120%;
   font-size: 0.813rem;
   width: 100%;
 }
@@ -245,6 +265,7 @@ body #wrap .right_contents #all .info_card .card1 dt img {
 }
 body #wrap .right_contents #all .info_card .card1 dd .card1dt {
   font-size: 0.75rem;
+  line-height: 120%;
 }
 body #wrap .right_contents #all .info_card .card1 dd {
   font-size: 0.813rem;
