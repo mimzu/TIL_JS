@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탄생화 </title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        body {}
+        #wrap {}
+        #wrap .container {margin: 0 auto; text-align: center; width: 1400;}
+        #wrap .container .inputs {margin: 0 auto; width: 100%; display:flex; flex-flow:row nowrap; ;}
+        #wrap .container .inputs .input {} /* 공통 */
+        #wrap .container .inputs .input::placeholder {} /* 공통 */
+        #wrap .container .inputs .year {}
+        #wrap .container .inputs .month {}
+        #wrap .container .inputs .day {}
+        #wrap .container .inputs p {}
+        #wrap .container #check_btn {}
+        #wrap .container #check_btn:hover {}
+        #wrap .container .result_box {}
+        #wrap .container .result_box p {}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class=inputs>
+                <input type="text" class="input year" placeholder="2000">
+                <p>년</p>
+                <input type="text" class="input month" placeholder="1">
+                <p>월</p>
+                <input type="text" class="input day" placeholder="1">
+                <p>일</p>
+            </div>
+            <button type="button" id="check_btn">탄생화와 꽃말은?</button>
+            <div class="result_box">
+                <p><!-- 결과 출력 --></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
