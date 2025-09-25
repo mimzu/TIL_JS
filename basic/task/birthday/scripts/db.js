@@ -59,5 +59,10 @@ const birthday_flower = [
         flower:'포인세티아',
         content:'축하, 감사',
         src:'https://i.pinimg.com/736x/4b/29/96/4b2996b268a1fc975a0cb352947c032c.jpg'
+    },{
+        month:13,
+        flower:'고릴라',
+        content:'고, 릴라',
+        src:'https://i.pinimg.com/1200x/16/66/18/166618d46c4ea451cb70389e361151d1.jpg'
     }
 ]
