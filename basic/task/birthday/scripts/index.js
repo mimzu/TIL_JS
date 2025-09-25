@@ -1,51 +1,39 @@
-const birthday_flower = [
-    {
-        month:1,
-        flower:'수선화',
-        content:'자기애, 자존심, 외로움',
-    },{
-        month:2,
-        flower:'제비꽃',
-        content:'겸손, 양보',
-    },{
-        month:3,
-        flower:'수선화',
-        content:'자기애, 자존심, 외로움',
-    },{
-        month:4,
-        flower:'스위트피',
-        content:'추억, 즐거움'
-    },{
-        month:5,
-        flower:'은방울꽃',
-        content:'희망, 섬세함'
-    },{
-        month:6,
-        flower:'백합',
-        content:'순결'
-    },{
-        month:7,
-        flower:'미나리아재비',
-        content:'아름다움, 인격'
-    },{
-        month:8,
-        flower:'글라디올러스',
-        content:'비밀, 상상, 견고함'
-    },{
-        month:9,
-        flower:'물망초',
-        content:'진실한 사랑'
-    },{
-        month:10,
-        flower:'금잔화',
-        content:'실망, 비애'
-    },{
-        month:11,
-        flower:'국화',
-        content:'성실, 진실'
-    },{
-        month:12,
-        flower:'포인세티아',
-        content:'축하, 감사'
+//초기세팅 : 결과 숨기기, 공유버튼 숨기기
+const $resultFlower = $('.result_box')
+const $shareBtn = $('#share_btn')
+$resultFlower.hide()
+$shareBtn.hide()
+const $imgDiv = $('#flower_img')
+$imgDiv.hide()
+const $img = $('#flower_img img')
+
+
+//내 꽃 찾기 버튼 클릭 시 입력한 년/월/일 중 '월' 인식, 해당 값과 동일한 탄생화 배열 출력하기
+const $resultBtn = $('#check_btn')
+const $year = $('.year')
+const $month = $('.month')
+const $day = $('.day')
+console.log($resultBtn)
+
+const $flower = $('.flower')
+const $content = $('.content')
+console.log($flower,$content)
+
+$resultBtn.click(function(){
+    //조건 ? 참 : 거짓
+    console.log(Boolean($year.val()))
+    const ymd = $year.val() && $month.val() && $day.val()
+    ymd ? flowerFunc() :
+    alert('앗! 아직 다 안 적었어요 🙈 생년월일을 모두 입력해주세요!');
+    function flowerFunc(){
+        const userMonth = $month.val();
+        console.log(userMonth,birthday_flower[userMonth-1].flower,birthday_flower[userMonth-1].content)
+        $resultFlower.slideDown(1500)
+        $imgDiv.fadeIn(2000)
+        $flower.text(birthday_flower[userMonth-1].flower)
+        $content.text(birthday_flower[userMonth-1].content)
+        $shareBtn.show()
+        $img.attr("src",birthday_flower[userMonth-1].src)
+        $resultBtn.text('💫다시 찾기')
     }
-]
+})

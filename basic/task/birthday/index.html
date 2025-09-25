@@ -5,39 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>탄생화 </title>
     <link rel="stylesheet" href="./style/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/db.js"></script>
     <script src="./scripts/index.js" defer></script>
     <style>
         body {}
-        #wrap {}
-        #wrap .container {margin: 0 auto; text-align: center; width: 1400;}
-        #wrap .container .inputs {margin: 0 auto; width: 100%; display:flex; flex-flow:row nowrap; ;}
-        #wrap .container .inputs .input {} /* 공통 */
+        #wrap {
+        padding:50px 0;}
+        #wrap h1 {
+            font-size:1.1rem;
+            line-height: 150%;
+        }
+        #wrap h1 em {font-weight: 600;}
+        #wrap .container {
+            padding:60px 50px;
+            background-color:rgba(218, 218, 218, 0.3);
+            margin: 0 auto; text-align: center; width: 500px; 
+        }
+        #wrap .container .inputs {
+            margin: 0 auto; width: 100%; display:flex; flex-flow:row nowrap;
+            justify-content: center; gap:15px; margin:30px 0;
+        }
+        #wrap .container .inputs .input {
+            width: 50px;
+            display:inline-block;
+            padding:10px;
+            border-radius: 10px;
+            text-align: center;
+            border:2px solid #fff;
+        } /* 공통 */
+        #wrap .container .inputs .input:hover {border:2px solid pink}
         #wrap .container .inputs .input::placeholder {} /* 공통 */
-        #wrap .container .inputs .year {}
+        #wrap .container .inputs .year {width: 80px;}
         #wrap .container .inputs .month {}
         #wrap .container .inputs .day {}
-        #wrap .container .inputs p {}
-        #wrap .container #check_btn {}
-        #wrap .container #check_btn:hover {}
-        #wrap .container .result_box {}
-        #wrap .container .result_box p {}
+        #wrap .container .inputs p {
+            line-height: 40px;
+        }
+        #wrap .container .result_box {
+            background-color:rgba(255, 192, 203,0.5);
+            border-radius: 10px;
+            padding:30px 0;
+            margin-bottom:30px;
+        }
+        #wrap .container .result_box p:first-child {margin-bottom:10px;}
+        #wrap .container .result_box p {
+            line-height: 150%;
+        }
+        #wrap .container .result_box p span {}
+        #wrap .container .result_box p .flower {color:rgb(190, 95, 95); font-weight: 600; font-size:1.3rem;}
+        #wrap .container .result_box p .content {
+            background-color:rgb(233, 136, 136);
+            margin:0 5px; border-radius: 5px;
+            padding:2px 5px; color:#fff;
+        }
+        #wrap .container button {
+            background-color:rgba(218, 218, 218, 0.3);
+            border:2px solid pink;
+            padding:10px 30px;
+            border-radius:10px;
+        }
+        #wrap .container button:hover {background-color:pink; color:red;}
     </style>
 </head>
 <body>
     <div id="wrap">
         <div class="container">
-            <div class=inputs>
+            <h1>생일마다 특별한 꽃이 있다는 사실, 알고 계셨나요?<br>
+                내 생일을 상징하는 <em>꽃과 꽃말</em>을 지금 만나보세요 🌷✨</h1>
+            <form class=inputs>
                 <input type="text" class="input year" placeholder="2000">
                 <p>년</p>
                 <input type="text" class="input month" placeholder="1">
                 <p>월</p>
                 <input type="text" class="input day" placeholder="1">
                 <p>일</p>
-            </div>
-            <button type="button" id="check_btn">탄생화와 꽃말은?</button>
+            </form>
+            <div id="flower_img" style=" border-radius: 10px; margin:30px 0; height: 400px; width: auto; overflow:hidden;"><img src="https://i.pinimg.com/736x/03/2c/69/032c6983604f0f1e87cbb1d742b2b05f.jpg" alt="꽃" style="width:100%; "></div>
             <div class="result_box">
-                <p><!-- 결과 출력 --></p>
+                <p><span class='flower'>은방울꽃</span></p>
+                <p><span class='content'>희망 섬세함</span></p>
             </div>
+            <button type="button" id="check_btn">🌼 내 꽃 찾기 </button>
+            <button type="button" id="share_btn">💌 공유하기</button>
         </div>
     </div>
 </body>
