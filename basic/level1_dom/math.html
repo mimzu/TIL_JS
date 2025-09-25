@@ -6,8 +6,48 @@
     <title>Math | js</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <script src="./scripts/math.js" defer></script>
+    <style>
+        #min_price_btn {margin-top:10px;}
+        body {text-align:center; padding-top:50px;}
+        #coupon, #total_btn, #min_price_btn, #price_btn, #delivery_btn {background-color:rgb(81, 145, 145); padding:2px 5px; color:#fff;margin-bottom:10px;}
+        #coupon:hover, #total_btn:hover,#min_price_btn:hover, #price_btn:hover, #delivery_btn:hover {background-color:yellow; color:rgb(81, 145, 145)}
+        .calc {
+            background-color: #eee;
+            width: 500px;
+            margin: 50px auto;
+            padding:20px;
+        }
+        .calc p input {padding:2px; text-align: center; margin-bottom:10px; border:1px solid rgb(81, 145, 145); width: 100px;}
+        .calc p:nth-child(4) {font-weight: 500; margin-top:20px; font-size:1.25rem; }
+        .calc p:nth-child(4) em {color: red; font-weight: 800;}
+        .min2 p {line-height: 120%; color:red;background-color: rgb(193, 224, 224); width:200px; margin:0 auto; margin-bottom:10px;}
+        .min2 h2,.min_sort h2 {font-weight: 600; border:1px solid #000; padding: 2px 5px; width: 150px; margin:0 auto 10px; }
+    </style>
 </head>
 <body>
-    
+    <section class="min2">
+        <button type="button" id="price_btn">최저가 찾기</button>
+        <button type="button" id="delivery_btn">배송비 무료 찾기</button>
+        <p class="result1"><!-- 최저가 표시 --></p>
+        <p class="result2"><!-- 배송비 표시 --></p>
+        <h2>쇼핑몰별 최저가</h2>
+        <ul id="shop_list"><!-- js에서 li삽입 위치 --></ul>
+    </section>
+    <section class="min_sort">
+        <button type="button" id="min_price_btn">최저가 찾기</button>
+        <p class="min_price">최저가가 여기 표시됩니다.</p>
+        <h2>쇼핑몰별 최고가</h2>
+        <ul id="shop_list2"><!-- js에서 li삽입 위치 --></ul>
+    </section>
+    <section class="calc">
+        <p>총 금액 <br><input type='number' id='price'></p>
+        <p>인원수 <br> <input type='number' id='person'></p>
+        <button type="button" id="total_btn">계산하기</button>
+        <p class="result">1명이 낼 금액은 <em></em>원입니다</p>
+    </section>
+    <button type="button" id="coupon" >할인쿠폰뽑기</button>
+    <section class="ad">
+        <a href="#"><img src="" alt="" width="300px;"></a>
+    </section>
 </body>
 </html>
