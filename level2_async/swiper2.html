@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        header {
+            position:fixed; width: 100%; text-align: center;
+            left:0; top:0; line-height: 50px;
+            font-size:1.25rem;
+            font-weight: 700;
+            background-color:black;
+            color:#fff;
+            z-index: 999;
+        }
+        #wrap {background-color:#eee;
+            width: 100%;
+            height: 100vh
+        }
+        #wrap .swiper-wrapper {}
+        #wrap .swiper-wrapper .swiper-slide {padding:60px 10px;}
+        #wrap .swiper-wrapper .ad {background-color:lightpink;}
+        #wrap .swiper-wrapper .ad #ad_contents {max-width:1000px; height: 400px; }
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper {}
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper .swiper-slide  {text-align: center;}
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper .ad1 {background-color:#eee;}
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper .ad2 {background-color:#eee}
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper .ad3 {background-color:#eee; }
+        #wrap .swiper-wrapper .ad #ad_contents .swiper-wrapper .ad1 img, .ad2 img, .ad3 img {
+            height: 100%; width: auto; 
+        }
+        #wrap .swiper-wrapper .best {background-color:#fafad2; } 
+        #wrap .swiper-wrapper .best .bestUl {
+            display:flex; flex-flow:row nowrap;
+        }
+        #wrap .swiper-wrapper .best .bestUl .best_product1,
+        #wrap .swiper-wrapper .best .bestUl .best_product2 /* li */{
+            max-width:100%; height: 500px;
+            margin: 0 auto;
+            background-color: #e0e0b3;
+            position:relative;
+        }
+        #wrap .swiper-wrapper .best .bestUl .best_product1 #best1_contents,
+        #wrap .swiper-wrapper .best .bestUl .best_product2 #best2_contents /* 크기 줘야댐 */
+        {width:300px; height: 300px;}
+        #wrap .swiper-wrapper .best .bestUl .best_product1 #best1_contents .swiper-wrapper{}
+        #wrap .swiper-wrapper .best .bestUl .best_product1 #best1_contents .best1,
+        #wrap .swiper-wrapper .best .bestUl .best_product2 #best2_contents .best2 {}
+        #wrap .swiper-wrapper .best .bestUl h3 {margin:10px; font-weight: 600; width: max-content;}
+        #wrap .swiper-wrapper .best .bestUl p {margin:7px 10px; font-size:0.75rem; width: max-content;}
+        #wrap .swiper-wrapper .best .bestUl h3:hover,#wrap .swiper-wrapper .best .bestUl p:hover {
+            color:rgb(255, 0, 170);
+        }
+        #wrap .swiper-wrapper .best .bestUl .swiper-button-next {
+            color:black; transform:scale(0.5) rotate(270deg);
+            top:33%; bottom:auto; left:auto; right:0;
+        }
+        #wrap .swiper-wrapper .best .bestUl .swiper-button-prev {
+            color:black; transform:scale(0.5) rotate(270deg);
+            top:33%; bottom:auto; left:20px; right:auto;
+        }
+        #wrap .swiper-wrapper .best .bestUl .best_product1 #best1_contents .swiper-slide {}
+        #wrap .swiper-wrapper .best .bestUl img {width: 100%;}
+        #wrap .swiper-wrapper .new {background-color:lightseagreen;}
+        #wrap .swiper-wrapper .md {background-color:lightblue;}
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <div class="swiper" id="wrap">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ad">
+                <h1>광고</h1>
+                <div class="swiper" id="ad_contents"> <!-- 1000X400 -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide ad1"><img src="https://i.pinimg.com/736x/93/d1/ac/93d1ac9ddc711eb9ff70f1b58eacaf0a.jpg" alt=""></div>
+                        <div class="swiper-slide ad2"><img src="https://i.pinimg.com/736x/37/62/91/37629141545d1338a2edfc86711dd77b.jpg" alt=""></div>
+                        <div class="swiper-slide ad3"><img src="https://i.pinimg.com/1200x/53/83/63/538363d91c7a83af6aec3583758811e3.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide best">
+                <h1>베스트 상품</h1>
+                <ul class="bestUl">
+                    <li class="best_product1">
+                        <div class="swiper-button-prev"></div> <!-- 자식,자손 금지 -->
+                        <div class="swiper-button-next"></div>
+                        <a href="#">
+                            <div class="swiper" id="best1_contents">
+                                <div class="swiper-wrapper best1">
+                                    <div class="swiper-slide best1_1"><img src="./images/gentile_01.jpg" alt=""></div>
+                                    <div class="swiper-slide best1_2"><img src="./images/gentile_02.jpg" alt=""></div>
+                                    <div class="swiper-slide best1_3"><img src="./images/gentile_03.jpg" alt=""></div>
+                                </div>
+                            </div>
+                            <h3>에덴 02 (v)</h3>
+                            <p>₩330,000</p>
+                        </a>
+                    </li>
+                    <li class="best_product2">
+                        <div class="swiper-button-prev"></div> <!-- 자식,자손 금지 -->
+                        <div class="swiper-button-next"></div>
+                        <a href="#">
+                            <div class="swiper" id="best2_contents">
+                                <div class="swiper-wrapper best2">
+                                    <div class="swiper-slide best2_1"><img src="./images/gentile_04.jpg" alt=""></div>
+                                    <div class="swiper-slide best2_2"><img src="./images/gentile_05.jpg" alt=""></div>
+                                    <div class="swiper-slide best2_3"><img src="./images/gentile_06.jpg" alt=""></div>
+                                </div>
+                            </div>
+                            <h3>사가 02 (v)</h3>
+                            <p>₩340,000</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-slide new">
+                <h1>신상품</h1>
+            </div>
+            <div class="swiper-slide md">
+                <h1>MD추천상품</h1>
+            </div>
+        </div>
+        <!-- swiper-slide 외에 다른 선택 옵션들은 자식, 자손 작성 금지 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        const wrapSlide = new Swiper('#wrap',{
+            direction:'vertical',
+            mousewheel : true, 
+            scrollbar:{
+                el:'#wrap > .swiper-scrollbar' /* 부모 포함 작성 */
+            },
+        })
+
+        const adSlide = new Swiper ('#ad_contents',{
+            mousewheel:true,
+            scrollbar:{
+                el:'#ad_contents .swiper-scrollbar' 
+            },
+        })
+
+        const best1Slide = new Swiper ('#best1_contents',{
+            autoplay:{delay:2000},
+            loop:true,
+            navigation:{
+                nextEl:'.best_product1 > .swiper-button-next', 
+                prevEl:'.best_product1 > .swiper-button-prev',
+            },
+        })
+
+        
+        const best2Slide = new Swiper ('#best2_contents',{
+            autoplay:{delay:2300},
+            loop:true,
+            navigation:{
+                nextEl:'.best_product2 > .swiper-button-next', 
+                prevEl:'.best_product2 > .swiper-button-prev',
+            },
+        })
+
+    </script>
+</body>
+</html>

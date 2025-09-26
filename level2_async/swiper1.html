@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper | js plugin</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defef></script>
+    <!-- 개별 css, script 파일 작성 위치 -->
+    <style>
+        /* ★swiper 선택자는 공통 이름보단 직접 작성한 이름으로 생성하기 */
+        #product_new,#product_best {
+            background-color:aliceblue;
+            width: 500px; height: 250px; /* 부모 크기 설정 (자식, 자손은 상댇값으로 동일하게 커지는게 기본값 = 100%) */
+            overflow: hidden;
+        }
+        #product_new .swiper-wrapper {} /* relative 내장 */
+        #product_new .swiper-wrapper .swiper-slide {
+            border:2px solid red;
+            background-color:aquamarine;
+        }
+        #product_best .swiper-wrapper .swiper-slide { /* relative 내장 */
+            border:2px solid red;
+            background-color:pink;
+        }
+        #product_new .swiper-wrapper .slide1 {background-color:lightblue;}
+        #product_best .swiper-wrapper .best2 {background-color:hotpink;}
+        #product_new .swiper-wrapper .slide3 {background-color:lightseagreen;}
+        #product_best .swiper-wrapper .best4 {background-color:hotpink;}
+
+
+        </style>
+</head>
+<body>
+    <!-- CDN 연결 필수 + HTML 기본 구조 지키기 + CSS  -->
+    <!-- 기존 swiper HTML의 클래스명은 CDN에 연결된 이름으로 절대 수정하거나 삭제해서는 안된다. 대신 id 및 class 추가 설정 가능 -->
+    <div class="swiper" id="product_new">
+		<!--필수-->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <video src="#" autoplay muted loop></video>
+                <div class="txt"> <!-- absolute(추가) -->
+                    <h1>제목</h1>
+                    <a href="#">링크</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide2">
+                <a href="#"><!-- 슬라이드 전체가 선택될때 -->
+                    <h1>제목</h1>
+                    <h2>부제목</h2>
+                    <p>내용</p>
+                </a>
+            </div>
+            <div class="swiper-slide slide3"><img src="#" alt=""></div>
+        </div>
+    </div>
+    <div class="swiper" id="product_best">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide best1">best1</div>
+            <div class="swiper-slide best2">best2</div>
+            <div class="swiper-slide best3">best3</div>
+            <div class="swiper-slide best4">best4</div>
+    </div>
+    <script>
+        const productNew = new Swiper('#product_new',{
+            //옵션 : 값,
+            autoplay:{delay:1000}, 
+            loop:true,
+            direction:'vertical',
+        })
+        const productBest = new Swiper ('#product_best',{
+            autoplay:{delay:1000},
+            loop:true,
+            //effect:'flip',
+            effect:'cube',
+            cubeEffect:{
+                shadow:false,
+            },
+            //effect:'fade'
+        })
+    </script>
+</body>
+</html>
