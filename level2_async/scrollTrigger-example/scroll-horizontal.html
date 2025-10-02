@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤트리거 가로스크롤 | JS</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        main {overflow-x:hidden;}
+        main .box {height: 100vh; background:#eee; font-size:5rem;}
+        main .wrap .container {display:flex; border:1px solid red;width: 400vw;}
+        main .wrap .container img {border:1px solid yellow; width: 100vw; background-attachment: fixed;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="box">1</section>
+        <section class="wrap">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1758771816404-d4de53a775fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2NHx8fGVufDB8fHx8fA%3D%3D" alt="" style="filter:grayscale(100%)">
+                <img src="https://images.unsplash.com/photo-1758771816404-d4de53a775fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2NHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1758800601575-1bf72a461248?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1758565811438-23e44c7c65fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2MHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </section>
+        <section class="box">3</section>
+        <section class="wrap">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1758771816404-d4de53a775fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2NHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1758800601575-1bf72a461248?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1758967458314-4bbbb2f3152d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0Nnx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1758565811438-23e44c7c65fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2MHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </section>
+        <section class="box">5</section>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        const container = document.querySelector('.container')
+        const scrollW = container.offsetWidth - window.innerWidth
+        console.log(container.offsetWidth,scrollW)
+
+        //scrollTrigger 
+        gsap.utils.toArray('.wrap').forEach((obj)=>{
+            console.log(obj)
+            //timeline 애니메이션 관리 + fromTo 연결동작
+            const banyan = gsap.timeline({
+                scrollTrigger:{
+                    trigger:obj,
+                    start:'center center',
+                    end:()=> "+=" + scrollW,
+                    scrub:true, //마우스 휠에 맞추기
+                    pin:true, //고정
+                    anticipatePin:1,
+                    //gsap 권정 옵션(화면 튀는 현상 막기)
+                }, defaults:{ease:'none'/* linear, easy-out, ease, ★none(속도균일) */}
+            })
+            banyan.fromTo(obj.querySelector('.container'),{
+                x:0
+            },{
+                x: -scrollW
+            })
+        })
+
+        //const timer = setInterval(()=>{})
+        //timer.속성.함수
+        //용도를 변수에 저장해두고, 속성과 함수를 불러서 쓰는 방식
+    </script>
+</body>
+</html>
