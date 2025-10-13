@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 - 내비게이션 관리</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        header {
+            max-width:1200px; min-width:320px;
+            height: 60px; margin:0 auto;
+            background-color:#f9f9f9; align-items: center;
+            display:flex; justify-content: space-between;
+            position:relative;
+        }
+        header #pc_nav {
+            position:absolute; left:50%; transform:translateX(-50%);
+        }
+        header #pc_nav .gnb {display:flex; gap:20px;}
+        header #pc_nav .gnb > li {position:relative}
+        header #pc_nav .gnb > li:hover .lnb {display:flex;}
+        header #pc_nav .gnb > li > .lnb {
+            position:absolute; left:0; top:60px;
+            background-color:#444;
+            display:flex;
+            display:none; /* sub 숨기기 */
+        }
+        header .right_wrap .m_nav_wrap {display:none;} /* m 숨기기 */
+        header .right_wrap .m_nav_wrap .gnb {} 
+        header .right_wrap .m_nav_wrap .gnb .lnb {display:none;} 
+        /* 모바일 꾸미기 */
+        header .right_wrap .m_nav_wrap #m_nav {
+            position:absolute; right: 0; top:60px; background:#555;
+        }
+        /* 반응형 1024 이하 모바일 모습으로 변하기 */
+        @media screen and (max-width:1024px) {
+            /* pc nav 숨기기, m nav 보이기 */
+            header #pc_nav {display:none;}
+            header .right_wrap .m_nav_wrap {display:block;}
+            header .right_wrap .right_menu .contact {display:none;}
+
+        } /* 1024 end */
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="#"><img src="#" alt="로고"></a></h1>
+        <nav id="pc_nav"> <!-- 데스크탑 -->
+            <ul class="gnb">
+                <li><a href="">ABOUT</a>
+                    <ul class="lnb">
+                        <li>
+                            <a href="#">
+                                <img scr="#" alt="">
+                                <em>our journey</em>
+                                <span class="view_more">view more</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img scr="#" alt="">
+                                <em>global activations</em>
+                                <span class="view_more">view more</span>로고
+                                보조메뉴(언어, contact, 로그인, 회원가입,장바구니 등)
+                                
+                            </a>
+                        </li>
+                    </ul>   
+                </li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">FEED</a></li>
+                <li><a href="">FIND JINRO</a></li>
+                <li><a href="">VIBE TEST</a></li>
+            </ul>
+        </nav>
+        <div class="right_wrap">
+            <div class="right_menu">
+                보조메뉴(언어, contact, 로그인, 회원가입,장바구니 등)
+                <a href="#" class="contact">CONTACT</a>
+            </div>
+            <div class="m_nav_wrap"> 
+                <button type="button" id="m_nav_link">메뉴열기</button>
+                <nav id="m_nav"> <!-- 태블릿, 모바일 -->
+                    <!-- Js 처리 -->
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script>
+        
+        const pcNav = document.querySelector('#pc_nav') //요소 잡기
+        const mNav = document.querySelector('#m_nav') // 붙여넣기 위치
+        const gnbClone = pcNav.children[0].cloneNode(true) //요소 복제
+        mNav.appendChild(gnbClone); //mNav 요소의 마지막 자식위치에 gnbClone삽입
+        const pcContact = document.querySelector('.right_menu .contact')
+        const contactClone = pcContact.cloneNode(true)
+        console.log(pcNav,gnbClone,mNav,pcContact,contactClone)
+        mNav.appendChild(contactClone); //mNav 요소의 마지막 자식위치에 gnbClone삽입
+
+        /* gnb 메뉴 클릭 시 lnb 보이고, 다시 클릭 시 숨기기 */
+        /* for 문 활용 */
+        const mGnb = document.querySelectorAll('#m_nav .gnb li')
+        let gnbBoolean = false;
+        for (let i of mGnb){
+            console.log(i)
+            i.addEventListener('click',(e)=>{
+                e.preventDefault(); //a 기능 막기
+                gnbBoolean = !gnbBoolean; //sub 논리값 반전
+                gnbBoolean ? //삼항조건연산자
+                    i.children[1].style.display = 'block' : //조건이 참
+                    i.children[1].style.display = 'none' //조건이 거짓
+            })
+        }
+
+    </script>
+</body>
+</html>
