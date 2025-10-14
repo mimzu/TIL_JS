@@ -1,0 +1,10 @@
+#wrap {}
+#wrap main {}
+#wrap main h1 {text-align: center; padding:100px 0 50px; font-weight: 700; font-size:2rem;}
+#wrap main dl {
+    min-width: 800px; background-color:#f0fff0;
+    margin:0 auto; padding: 20px;
+}
+#wrap main dl dt:first-child {border-top:none;}
+#wrap main dl dt {font-weight: 700; border-top:1px solid #d5e6d5; padding:15px 0 10px}
+#wrap main dl dd {padding-left: 20px; padding:0 0 15px;}

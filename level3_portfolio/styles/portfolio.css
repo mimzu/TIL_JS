@@ -1,0 +1,14 @@
+#wrap main {}
+#wrap main h1 {
+    height: 80vh; text-align: center; line-height: 1.5; padding:30%;
+    font-size:2rem; font-weight: 700;
+}
+#wrap main #web_project {
+    border:2px solid #000;
+    width:1000px; height: 450px;
+}
+#wrap main #web_project .swiper-wrapper {}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(1){background-color:antiquewhite}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(2){background-color:aquamarine}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(3){background-color:darksalmon}
+#wrap main #web_project .swiper-wrapper .swiper-slide:nth-child(4){background-color:honeydew}
